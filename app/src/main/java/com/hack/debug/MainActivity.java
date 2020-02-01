@@ -1,29 +1,22 @@
 package com.hack.debug;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.hack.debug.ui.home.HomeViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
+import static android.view.View.*;
 
 public class MainActivity extends AppCompatActivity {
-    ListView listView;
-    ListView simpleList;
-    List list = new ArrayList();
-    ArrayAdapter adapter;
-    String countryList[] = {"India", "China", "australia", "Portugle", "America", "NewZealand"};
-
+    Button signupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,35 +32,25 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+    signupButton = findViewById(R. id. loginButton);
 
-        listView = (ListView)findViewById(R.id.showList);
-        testAddList();//test add a item
-        adapter= new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
-        listView.setAdapter(adapter);
+//    signupButton.setOnClickListener(new View.OnClickListener(){;
+//
+//
+//
+//
+//        button.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(v.getContext(), LoginActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
+
     }
-//    public void addContent(ArrayList addList){
-//        list.addAll(addList);
-//    }
-    public boolean testAddList(){
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        list.add("orange");
-        return true;
-    }
+
+
 
 }
