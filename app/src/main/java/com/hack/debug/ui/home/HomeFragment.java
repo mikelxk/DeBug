@@ -1,6 +1,8 @@
 package com.hack.debug.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 
+import com.hack.debug.Main2Activity;
 import com.hack.debug.R;
 
 import java.util.ArrayList;
@@ -42,6 +45,7 @@ public class HomeFragment extends Fragment {
                 myList
         );
         listView.setAdapter(liveViewAdapter);
+
         return view;
     }
     public void listAdd(String s){
@@ -50,5 +54,7 @@ public class HomeFragment extends Fragment {
     public void listAddList(ArrayList<String> als){
         myList.addAll(als);
     }
+
+
 
 }
