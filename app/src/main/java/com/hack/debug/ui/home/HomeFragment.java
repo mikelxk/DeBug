@@ -15,18 +15,27 @@ import android.arch.lifecycle.ViewModelProviders;
 
 import com.hack.debug.R;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-
+    public ArrayList<String> myList = new ArrayList<String>();
     public HomeFragment(){
     }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        String[] myList = {"help","me","k"};
         ListView listView = (ListView) view.findViewById(R.id.showList);
+
+        listAddList(new ArrayList<String>(){
+            {
+                add("Testing 1");
+                add("Testing 2");
+            }
+
+        });
         ArrayAdapter<String> liveViewAdapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
@@ -35,4 +44,11 @@ public class HomeFragment extends Fragment {
         listView.setAdapter(liveViewAdapter);
         return view;
     }
+    public void listAdd(String s){
+        myList.add(s);
+    }
+    public void listAddList(ArrayList<String> als){
+        myList.addAll(als);
+    }
+
 }

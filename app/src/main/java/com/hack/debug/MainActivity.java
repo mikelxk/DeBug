@@ -32,20 +32,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-    signupButton = findViewById(R. id. loginButton);
 
-//    signupButton.setOnClickListener(new View.OnClickListener(){;
-//
-//
-//
-//
-//        button.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(v.getContext(), LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
 
 
