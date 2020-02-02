@@ -1,9 +1,11 @@
 package com.hack.debug.ui.notifications;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.support.annotation.Nullable;
 import android.support.annotation.NonNull;
@@ -12,6 +14,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 
 import com.hack.debug.R;
+import com.hack.debug.ui.login.LoginActivity;
 
 public class NotificationsFragment extends Fragment {
 
@@ -29,6 +32,16 @@ public class NotificationsFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        //***me
+        Button button = (Button) root.findViewById(R.id.loginButton);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        //**
         return root;
     }
 }
