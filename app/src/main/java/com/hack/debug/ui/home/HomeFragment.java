@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback{
     GoogleMap mGooglemap;
     MapView mMapview;
     View view;
-    public ArrayList<String> myList = new ArrayList<String>();
+    public static ArrayList<String> myList = new ArrayList<String>();
     public HomeFragment(){
     }
     @Override
@@ -49,13 +49,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback{
         view = inflater.inflate(R.layout.fragment_home, container, false);
         ListView listView = (ListView) view.findViewById(R.id.showList);
 
-        listAddList(new ArrayList<String>(){
-            {
-                add("Testing 1");
-                add("Testing 2");
-            }
-
-        });
+//        listAddList(new ArrayList<String>(){
+//            {
+//                add("Testing 1");
+//                add("Testing 2");
+//            }
+//
+//        });
         ArrayAdapter<String> liveViewAdapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
